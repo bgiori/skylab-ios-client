@@ -27,8 +27,6 @@ public extension SkylabClient {
     }
 }
 
-let EnrollmentIdKey: String = "com.amplitude.flags.enrollmentId"
-
 public class DefaultSkylabClient : SkylabClient {
 
     internal let apiKey: String
@@ -37,7 +35,6 @@ public class DefaultSkylabClient : SkylabClient {
     internal var userId: String?
     internal var user: SkylabUser?
     internal var contextProvider: ContextProvider?
-    internal var enrollmentId: String?
 
     init(apiKey: String, config: SkylabConfig) {
         self.apiKey = apiKey
@@ -167,22 +164,7 @@ public class DefaultSkylabClient : SkylabClient {
     }
 
     func loadFromStorage() -> Void {
-        self.loadEnrollmentId()
         self.storage.load()
         print("[Skylab] loaded \(self.storage.getAll())")
     }
-
-    func loadEnrollmentId() -> Void {
-        enrollmentId = UserDefaults.standard.string(forKey: EnrollmentIdKey)
-        if (enrollmentId == nil) {
-            enrollmentId = generateEnrollmentId()
-            print("generated \(enrollmentId!)")
-            UserDefaults.standard.set(enrollmentId, forKey: EnrollmentIdKey)
-        }
-    }
-}
-
-func generateEnrollmentId() -> String {
-    let letters = "abcdefghijklmnopqrstuvwxyz0123456789"
-    return String((0..<25).map{ _ in letters.randomElement()! })
 }
