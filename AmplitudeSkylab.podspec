@@ -1,7 +1,9 @@
+skylab_version = "1.0.2" # Version is managed automatically by semantic-release, please dont change it manually
+
 Pod::Spec.new do |spec|
 
   spec.name         = "AmplitudeSkylab"
-  spec.version      = "1.0.2"
+  spec.version      = skylab_version 
   spec.summary      = "Skylab SDK"
   spec.license      = { :type => "MIT" }
   spec.author       = { "Amplitude" => "skylab@amplitude.com" }

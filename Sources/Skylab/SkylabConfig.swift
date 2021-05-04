@@ -41,6 +41,8 @@ public struct SkylabConfig {
     }
 
     public struct Constants {
+        // Version string is matched in release.config.js
+        // Changing this may result in breaking automated releases
         public static let Version: String = "1.0.2"
         public static let Library: String = "skylab-ios"
     }
