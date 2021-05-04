@@ -73,6 +73,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201A78522641D0EC00663DCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E914960525796DA800C64B38 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +87,7 @@
 				E9C5D928257971B900867574 /* Sources */,
 				E9C5D929257971BE00867574 /* Tests */,
 				E914961025796DA800C64B38 /* Products */,
+				201A78522641D0EC00663DCB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -408,6 +416,7 @@
 		E914962425796DA800C64B38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -436,6 +445,7 @@
 		E914962525796DA800C64B38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -475,7 +485,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amplitude.SkylabTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -494,7 +504,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amplitude.SkylabTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
