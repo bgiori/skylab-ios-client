@@ -56,7 +56,6 @@ jobs:
           gem install bundler
           bundle config path vendor/bundle
           bundle install
-          #pod install
 
       - name: iOS Tests
         run: |
