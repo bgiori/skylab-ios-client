@@ -74,6 +74,24 @@ jobs:
             -destination 'platform=macosx' \
             test
 
+      - name: tvOS Tests
+        run: |
+          xcodebuild \
+            -project Skylab.xcodeproj \
+            -scheme Skylab \
+            -sdk appletvsimulator \
+            -destination 'platform=tvOS Simulator,name=Apple TV' \
+            test
+
+      - name: watchOS Tests
+        run: |
+          xcodebuild \
+            -project Skylab.xcodeproj \
+            -scheme Skylab \
+            -sdk watchsimulator \
+            -destination 'platform=watchOS Simulator,name=Apple Watch Series 6 - 40mm' \
+            test
+
       - name: Validate Podfile
         run: pod lib lint
 
