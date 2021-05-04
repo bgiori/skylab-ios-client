@@ -15,6 +15,15 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target  = '10.0'
   spec.ios.source_files       = 'Sources/Skylab/**/*.{h,swift}'
 
+  spec.osx.deployment_target  = '10.10'
+  spec.osx.source_files       = 'sources/skylab/**/*.{h,swift}'
+
+  spec.tvos.deployment_target = '9.0'
+  spec.tvos.source_files      = 'sources/skylab/**/*.{h,swift}'
+  
+  spec.watchos.deployment_target = '3.0'
+  spec.watchos.source_files      = 'sources/skylab/**/*.{h,swift}'
+
   spec.dependency 'Amplitude'
 
 end
