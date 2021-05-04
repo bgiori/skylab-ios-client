@@ -59,6 +59,7 @@ jobs:
 
       - name: TODO DEBUG
         run: | 
+          xcodebuild -version
           xcrun simctl list
 
       - name: iOS Tests
