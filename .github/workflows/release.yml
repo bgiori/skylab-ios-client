@@ -63,7 +63,7 @@ jobs:
 
       - name: Install Simulators
         run: |
-          xcrun simctl create "iPhone 12 Test" "com.apple.CoreSimulator.SimDeviceType.iPhone-12" "com.apple.CoreSimulator.SimRuntime.iOS-14-4"
+          xcrun simctl create "iPhone 11" "com.apple.CoreSimulator.SimDeviceType.iPhone-11" "com.apple.CoreSimulator.SimRuntime.iOS-14-0"
 
       - name: iOS Tests
         run: |
