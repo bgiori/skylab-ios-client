@@ -54,10 +54,7 @@ jobs:
       - name: Install Cocoapods
         if: steps.cache-gems-pods.outputs.cache-hit != 'true'
         run: |
-          gem install bundler
-          bundle config path vendor/bundle
-          bundle install
-          pod install
+          gem install cocoapods
 
       - name: Validate Podfile
         run: pod lib lint
