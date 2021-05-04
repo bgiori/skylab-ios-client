@@ -65,7 +65,7 @@ jobs:
             -project Skylab.xcodeproj \
             -scheme Skylab \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.4'
+            -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.2'
 
       - name: Validate Podfile
         run: pod lib lint
