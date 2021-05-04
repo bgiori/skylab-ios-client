@@ -65,6 +65,10 @@ jobs:
         run: |
           xcrun simctl create "iPhone 11" "com.apple.CoreSimulator.SimDeviceType.iPhone-11" "com.apple.CoreSimulator.SimRuntime.iOS-14-0"
 
+      - name: TODO DEBUG 2
+        run: | 
+          xcrun simctl list
+
       - name: iOS Tests
         run: |
           xcodebuild test \
