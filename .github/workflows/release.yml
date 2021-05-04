@@ -65,6 +65,15 @@ jobs:
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.4'
 
+      - name: macOS Tests
+        run: |
+          xcodebuild \
+            -project Skylab.xcodeproj \
+            -scheme Skylab \
+            -sdk macosx \
+            -destination 'platform=macosx' \
+            test
+
       - name: Validate Podfile
         run: pod lib lint
 
