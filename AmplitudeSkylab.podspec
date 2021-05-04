@@ -24,6 +24,6 @@ Pod::Spec.new do |spec|
   spec.watchos.deployment_target = '3.0'
   spec.watchos.source_files      = 'sources/skylab/**/*.{h,swift}'
 
-  spec.dependency 'Amplitude'
+  spec.dependency 'Amplitude' '~> 8.0'
 
 end
