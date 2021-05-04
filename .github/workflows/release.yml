@@ -58,7 +58,7 @@ jobs:
       - name: iOS Tests
         run: |
           xcodebuild test \
-            -workspace Skylab.xcodeproj \
+            -project Skylab.xcodeproj \
             -scheme Skylab_iOSTests \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0'
