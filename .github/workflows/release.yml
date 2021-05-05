@@ -73,6 +73,26 @@ jobs:
         with:
           node-version: '12' 
 
+      - name: Checkout gh-pages for Building Docs
+        uses: actions/checkout@v2
+        with:
+          ref: "gh-pages"
+          path: "skylab-ios-client-gh-pages"
+
+      - name: Install Swift Doc
+        run: brew install swiftdocorg/formulae/swift-doc
+
+      - name: Swift Build
+        run: swift build -v
+
+      - name: DEBUG REMOVE
+        run: |
+          echo "BEFORE SWIFT DOC GEN"
+          git status
+          swift doc generate Sources/Skylab/ --module-name Skylab --output docs --format html --base-url /skylab-ios-client
+          echo "AFTER SWIFT DOC GEN"
+          git status
+
       - name: Semantic Release --dry-run
         if: ${{ github.event.inputs.dryRun == 'true'}}
         env:

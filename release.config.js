@@ -55,8 +55,7 @@ module.exports = {
     }],
     ["@semantic-release/exec", {
       "publishCmd": "pod trunk push AmplitudeSkylab.podspec",
-      //"successCmd": "appledoc . && rsync -av doc/html/*  Amplitude-iOS-gh-pages/ && cd Amplitude-iOS-gh-pages && git commit -am '${nextRelease.version}' && git push"
-      "successCmd": "git commit -am '${nextRelease.version}' && git push"
+      "successCmd": "swift doc generate Sources/Skylab/ --module-name Skylab --output docs --format html --base-url /skylab-ios-client && git commit -am '${nextRelease.version}' && git push"
     }],
   ],
 }
