@@ -73,13 +73,15 @@ jobs:
         with:
           node-version: '12' 
 
-      - name: Checkout gh-pages for Building Docs
-        uses: actions/checkout@v2
-        with:
-          ref: "gh-pages"
-          path: "skylab-ios-client-gh-pages"
+      - name: Install Swift Doc - Clone
+        run: |
+          git clone https://github.com/SwiftDocOrg/swift-doc
+          cd swift-doc
+          make install
+          ls
+          cd ..
 
-      - name: Install Swift Doc
+      - name: Install Swift Doc - Brew
         run: brew install swiftdocorg/formulae/swift-doc
 
       - name: Swift Build
