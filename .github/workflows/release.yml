@@ -27,7 +27,6 @@ jobs:
     needs: [authorize]
     env:
       SWIFT_DOC_VERSION: '1.0.0-beta.6'
-      NODE_VERSION: '12'
     steps:
 
       - name: Checkout
@@ -39,11 +38,6 @@ jobs:
 
       - name: Validate Podfile
         run: pod lib lint
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }} 
 
       - name: Cache Swift Doc
         id: cache-swift-doc
