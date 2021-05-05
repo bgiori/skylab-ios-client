@@ -50,14 +50,13 @@ module.exports = {
       }
     ],
     ["@semantic-release/git", {
-      "assets": ["AmplitudeSkylab.podspec", "Sources/Skylab/SkylabConfig.swift", "CHANGELOG.md"],
+      "assets": ["AmplitudeSkylab.podspec", "Sources/Skylab/SkylabConfig.swift", "CHANGELOG.md", "docs/*"],
       "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
     }],
     ["@semantic-release/exec", {
       //"publishCmd": "pod trunk push AmplitudeSkylab.podspec",
       //"successCmd": "swift doc generate Sources/Skylab/ --module-name Skylab --output docs --format html --base-url /skylab-ios-client && git commit -am '${nextRelease.version}' && git push"
       "publishCmd": "echo YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET",
-      "successCmd": "git commit -am '${nextRelease.version}' && git push"
     }],
   ],
 }
