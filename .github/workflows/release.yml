@@ -36,8 +36,9 @@ jobs:
         run: |
           sudo xcode-select -switch /Applications/Xcode_12.4.app
 
-      - name: Validate Podfile
-        run: pod lib lint
+      # TODO Takes a really long time, look into why and how to speed up.
+      #- name: Validate Podfile
+      #  run: pod lib lint
 
       - name: Cache Swift Doc
         id: cache-swift-doc
@@ -46,7 +47,7 @@ jobs:
           path: /usr/local/bin/swift-doc
           key: ${{ runner.os }}-swift-doc-${{ env.SWIFT_DOC_VERSION }}
 
-      # Swift Doc stupidly requires graphviz as a dependency. 
+      # Swift Doc requires graphviz as a dependency. 
       # TODO Look into either caching graphviz or removing the graphviz 
       #      dependency from swift doc.
       - name: Install Graphviz
@@ -61,6 +62,14 @@ jobs:
           make install
           cd ..
           rm -rf swift-doc
+
+      - name: TODO DEBUG REMOVE
+        run: |
+          git status
+          echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+          swift doc generate Sources/Skylab/ --module-name Skylab --output docs --format html --base-url /skylab-ios-client
+          echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+          git status
 
       - name: Semantic Release --dry-run
         if: ${{ github.event.inputs.dryRun == 'true'}}
