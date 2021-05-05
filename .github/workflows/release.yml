@@ -91,9 +91,6 @@ jobs:
       - name: Generate Swift Doc
         run: swift doc generate Sources/Skylab/ --module-name Skylab --output docs --format html --base-url /skylab-ios-client
 
-      - name: DEBUG REMOVE
-        run: git status
-
       - name: Semantic Release --dry-run
         if: ${{ github.event.inputs.dryRun == 'true'}}
         env:
@@ -131,7 +128,4 @@ jobs:
           -p @google/semantic-release-replace-plugin@1 \
           -p @semantic-release/exec@5 \
           semantic-release
-
-      - name: DEBUG REMOVE
-        run: git status
 
