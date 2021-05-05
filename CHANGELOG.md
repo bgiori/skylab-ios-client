@@ -1,3 +1,11 @@
+# [2.0.0](https://github.com/bgiori/skylab-ios-client/compare/v1.1.4...v2.0.0) (2021-05-05)
+
+
+### Features
+
+* breaks changes ([1dc9108](https://github.com/bgiori/skylab-ios-client/commit/1dc910872167d02d261ad26c86ec7a07d2850f1a))
+* remove debug from ci ([84d3656](https://github.com/bgiori/skylab-ios-client/commit/84d36565f757be78d3f74bda813ff4ca0866c052))
+
 ## [1.1.4](https://github.com/bgiori/skylab-ios-client/compare/v1.1.3...v1.1.4) (2021-05-05)
 
 
