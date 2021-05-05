@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/bgiori/skylab-ios-client/compare/v1.1.3...v1.1.4) (2021-05-05)
+
+
+### Bug Fixes
+
+* remove docs ([2bfb3d4](https://github.com/bgiori/skylab-ios-client/commit/2bfb3d43141a5a9fd4d4acf7b81648fd9e1a32b0))
+
 ## [1.1.3](https://github.com/bgiori/skylab-ios-client/compare/v1.1.2...v1.1.3) (2021-05-05)
 
 
