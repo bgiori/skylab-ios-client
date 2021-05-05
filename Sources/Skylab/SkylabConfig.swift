@@ -14,7 +14,7 @@ public struct SkylabConfig {
     public let initialFlags: [String: Variant]
     public let instanceName: String
     public let serverUrl: String
-hefuiwpq
+
     public init(
         debug: Bool = SkylabConfig.Defaults.Debug,
         debugEnrollmentRequests: Bool = SkylabConfig.Defaults.DebugEnrollmentRequests,
