@@ -46,13 +46,15 @@ jobs:
           path: /usr/local/bin/swift-doc
           key: ${{ runner.os }}-swift-doc-${{ env.SWIFT_DOC_VERSION }}
 
-      - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v1
+      # Swift Doc stupidly requires graphviz as a dependency. 
+      # TODO Look into either caching graphviz or removing the graphviz 
+      #      dependency from swift doc.
+      - name: Install Graphviz
+        run: brew install graphviz
 
       - name: Install Swift Doc
         if: steps.cache-swift-doc.outputs.cache-hit != 'true'
         run: |
-          brew install graphviz
           git clone https://github.com/SwiftDocOrg/swift-doc
           cd swift-doc
           git checkout ${{ env.SWIFT_DOC_VERSION }}
