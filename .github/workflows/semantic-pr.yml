@@ -6,7 +6,7 @@ on:
 
 jobs:
   pr-title-check:
-    name: Check PR for semantic title
+    name: Check PR for Semantic Title
     runs-on: ubuntu-18.04
     steps:
       - name: PR title is valid

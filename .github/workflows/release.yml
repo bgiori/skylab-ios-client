@@ -26,7 +26,7 @@ jobs:
     runs-on: macos-10.15
     needs: [authorize]
     steps:
-      - name: Checkout skylab-ios-client 
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: Set Xcode 12.4
