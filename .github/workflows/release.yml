@@ -36,32 +36,14 @@ jobs:
         run: |
           sudo xcode-select -switch /Applications/Xcode_12.4.app
 
-      # TODO Takes a really long time, look into why and how to speed up.
-      #- name: Validate Podfile
-      #  run: pod lib lint
-
-      - name: Cache Swift Doc
-        id: cache-swift-doc
-        uses: actions/cache@v2
+      - name: Generate Swift Doc
+        uses: SwiftDocOrg/swift-doc@master
         with:
-          path: /usr/local/bin/swift-doc
-          key: ${{ runner.os }}-swift-doc-${{ env.SWIFT_DOC_VERSION }}
-
-      # Swift Doc requires graphviz as a dependency. 
-      # TODO Look into either caching graphviz or removing the graphviz 
-      #      dependency from swift doc.
-      - name: Install Graphviz
-        run: brew install graphviz
-
-      - name: Install Swift Doc
-        if: steps.cache-swift-doc.outputs.cache-hit != 'true'
-        run: |
-          git clone https://github.com/SwiftDocOrg/swift-doc
-          cd swift-doc
-          git checkout ${{ env.SWIFT_DOC_VERSION }}
-          make install
-          cd ..
-          rm -rf swift-doc
+          inputs: Sources/Skylab/
+          module-name: Skylab
+          output: docs
+          format: html
+          base-url: /skylab-ios-client
 
       - name: Semantic Release --dry-run
         if: ${{ github.event.inputs.dryRun == 'true'}}
@@ -100,8 +82,4 @@ jobs:
           -p @google/semantic-release-replace-plugin@1 \
           -p @semantic-release/exec@5 \
           semantic-release
-
-      - name: TODO DEBUG REMOVE
-        run: |
-          git status
 
