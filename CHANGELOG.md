@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/bgiori/skylab-ios-client/compare/v1.1.2...v1.1.3) (2021-05-05)
+
+
+### Bug Fixes
+
+* push in success cmd ([1df3d5d](https://github.com/bgiori/skylab-ios-client/commit/1df3d5def17f91004e9f5c67c6b239e96849fcc1))
+
 ## [1.1.2](https://github.com/bgiori/skylab-ios-client/compare/v1.1.1...v1.1.2) (2021-05-05)
 
 
