@@ -54,9 +54,10 @@ module.exports = {
       "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
     }],
     ["@semantic-release/exec", {
-      "verifyReleaseCmd": "swift doc generate Sources/Skylab/ --module-name Skylab --output docs --format html --base-url /skylab-ios-client",
+      "verifyReleaseCmd": "",
       "publishCmd": "pod trunk push AmplitudeSkylab.podspec",
-      "successCmd": "git commit -am '${nextRelease.version}' && git push"
+      //"successCmd": "swift doc generate Sources/Skylab/ --module-name Skylab --output docs --format html --base-url /skylab-ios-client && git commit -am '${nextRelease.version}' && git push"
+      "successCmd": "swift doc generate Sources/Skylab/ --module-name Skylab --output docs --format html --base-url /skylab-ios-client && git commit -am '${nextRelease.version}' && git status && git log -3"
     }],
   ],
 }
