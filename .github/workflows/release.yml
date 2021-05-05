@@ -55,6 +55,7 @@ jobs:
       - name: Install Swift Doc - Clone
         if: steps.cache-swift-doc.outputs.cache-hit != 'true'
         run: |
+          brew install graphviz
           git clone https://github.com/SwiftDocOrg/swift-doc
           cd swift-doc
           git checkout ${{ env.SWIFT_DOC_VERSION }}
