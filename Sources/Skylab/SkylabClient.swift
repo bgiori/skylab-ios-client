@@ -8,6 +8,11 @@
 import Foundation
 
 public protocol SkylabClient {
+    
+    /// Start the Skylab client SDK.
+    /// - Parameters:
+    ///   - user: The user to start the client with
+    ///   - completion: Callback for when the client has been initialized
     func start(user: SkylabUser, completion: (() -> Void)?) -> Void
     func setUser(user: SkylabUser, completion: (() -> Void)?) -> Void
     func getVariant(_ flagKey: String, fallback: Variant?) -> Variant?
